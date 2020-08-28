@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
+    <link rel = "stylesheet" type = "text/css" href = "surrealMain.css" />
+    <title></title>
+    <script src="https://kit.fontawesome.com/cde238009e.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="bar">
+      <div class="topbar">
+        <div class="logo">
+          SURREAL
+        </div>
+        <div class="account_info">
+          <div class="account_picture">
+            <i class="fas fa-user-circle"></i>
+          </div>
+          <div class="username">
+            {username}
+          </div>
+          <div class="signout_btn">
+            <form class="" action=signout.py method="post">
+              <input type="hidden" name="sid" value="{sid}">
+              <input type="submit" name="submit" value="Signout">
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="nav">
+        <div class="menu">
+          <a class="active home" href=""><i class="fas fa-search"></i>  Browse</a>
+          <a class="contact" href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+          <a class="about" href="about.html"><i class="fas fa-info-circle"></i> About</a>
+        </div>
+        <div class="cart-container">
+          <form class="" action=action.py method="post" id="cart_form">
+            <input type="hidden" name="sid" value="{sid}">
+            <input type="hidden" name="username" value="{username}">
+            <button type="submit" form="cart_form" name="button" formaction="cart.py" class="cart_btn"><i class="fas fa-shopping-cart"></i> Cart</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <form class="" action=home.py method="POST">
+      <input type="hidden" name="sid" value="{sid}">
+      <div class="content">
+        <div class="sidebar">
+          <div class="cart_info">
+            <h1>SURREAL</h1>
+            <p class="your_cart_text">Your Cart</p>
+            <div class="cart_info_grid">
+              <div class="cart_info_items">
+                <p><strong># of Items</strong><p>
+                <p>{num_items_cart}</p>
+              </div>
+              <div class="cart_info_total">
+                <p><strong>Total</strong><p>
+                <p>${cart_total}</p>
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="filtersort">
+              <p class="filtersort_by_title">Sort By:</p>
+              <br>
+              <select id="sort" name="sort">
+                <option value="Lowest to Highest Price">Lowest to Highest Price</option>
+                <option value="Highest to Lowest Price">Highest to Lowest Price</option>
+                <option value="Alphabetical Order">Alphabetical Order</option>
+                <option value="Reversed Alphabetical Order">Reversed Alphabetical Order</option>
+              </select>
+              <br>
+              <br>
+              <p class="filtersort_by_title">Filter By:</p>
+              <br>
+              <label for="status">Availability:</label>
+              <br>
+              <select id="status" name="status">
+                <option value="NA">No Preference</option>
+                <option value="Only in stores">Only in Stores</option>
+                <option value="Available Online">Available Online</option>
+              </select>
+              <br>
+              <label for="brand">Brand:</label>
+              <br>
+              <select id="brand" name="brand">
+                <option value="NA">No Preference</option>
+                <option value="Scott">Scott</option>
+                <option value="Charmin">Charmin</option>
+                <option value="Cottonelle">Cottonelle</option>
+                <option value="Just The Basics">Just The Basics</option>
+                <option value="Total Home">Total Home</option>
+                <option value="Berkley Jensen">Berkley Jensen</option>
+                <option value="Kamenstein">Kamenstein</option>
+                <option value="Vanity Fair">Vanity Fair</option>
+                <option value="Angel Soft">Angel Soft</option>
+                <option value="Great Value">Great Value</option>
+                <option value="Seventh Generation">Seventh Generation</option>
+              </select>
+              <label for="store">Store:</label>
+              <br>
+              <select id="store" name="store">
+                <option value="NA">No Preference</option>
+                <option value="BJ's">BJ's</option>
+                <option value="CVS">CVS</option>
+                <option value="Walmart">Walmart</option>
+              </select>
+              <label for="price">Max Price:</label>
+              <select id="price" name="price">
+                <option value="NA">No Preference</option>
+                <option value="10.00">10.00</option>
+                <option value="15.00">15.00</option>
+                <option value="20.00">20.00</option>
+                <option value="25.00">25.00</option>
+                <option value="30.00">30.00</option>
+                <option value="35.00">35.00</option>
+                <option value="40.00">40.00</option>
+              </select>
+              <input type="submit" value="Search">
+          </div>
+        </div>
+        <div class="search_container">
+          <div class="query">
+            <div class="number_of_results">
+              {num_matching_products} Matching Products
+            </div>
+            <div class="search">
+              <i class="fas fa-search"></i>
+              <input type="text" id="product_search" name="product_search" size="30" placeholder="Search...">
+            </div>
+          </div>
+          <div class="item_header">
+            <div>
+              <i class="fas fa-image"></i>
+            </div>
+            <div>
+              Name
+            </div>
+            <div>
+              Retailer
+            </div>
+            <div>
+              Shipping
+            </div>
+            <div>
+              <strong>Price</strong>
+            </div>
+            <div>
+              Add To Cart
+            </div>
+          </div>
+          <div class="results">
+
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="hidden_forms">
+
+    </div>
+  </body>
+</html>

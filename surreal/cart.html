@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="surrealMain.css">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Open+Sans&family=Roboto&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cde238009e.js" crossorigin="anonymous"></script>
+    <title>Cart</title>
+  </head>
+  <body>
+    <div class="message">
+
+    </div>
+    <div class="bar">
+        <div class="topbar">
+            <div class="logo">
+                SURREAL
+            </div>
+            <div class="account_info">
+                <div class="account_picture">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="username">
+                    {username}
+                </div>
+                <div class="signout_btn">
+                    <form class="" action=signout.py method="post">
+                        <input type="hidden" name="sid" value="{sid}">
+                        <input type="submit" name="submit" value="Signout">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="nav">
+            <div class="menu">
+              <div class="home_btn_container">
+                <form class="" action=home.py method="post" id="home_form">
+                  <input type="hidden" name="sid" value="{sid}">
+                  <input type="hidden" name="username" value="{username}">
+                  <button type="submit" form="home_form" name="button" formaction="home.py" class="home_btn"><i class="fas fa-search"></i> Browse</button>
+                </form>
+              </div>
+              <div class="other_menu">
+                <a class="contact" href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+                <a class="about" href="about.html"><i class="fas fa-info-circle"></i> About</a>
+              </div>
+            </div>
+            <div class="cart-container">
+                <a class="cart active"> <i class="fas fa-shopping-cart"></i> Cart</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="cart_header">
+        <h1>Your Cart</h1>
+        <p>{num_items_cart} Item(s) In Cart</p>
+        <p>Total: ${cart_total}</p>
+    </div>
+
+    <div class="cart_container">
+        <div class="cart_items">
+
+        </div>
+    </div>
+  </body>
+</html>

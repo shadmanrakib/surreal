@@ -1,0 +1,111 @@
+html, body {
+  margin: 0;
+  height: 100%
+}
+
+a {
+  text-decoration: none;
+}
+.container {
+  margin: 0;
+  background: rgba(255,255,255,0.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  height: 450px;
+  color: white;
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.3), 0 13px 40px 0 rgba(0,0,0,0.25);
+}
+
+@keyframes animation {
+  from {color: #6BBAA7;}
+  to {color: #8a2be2;}
+}
+
+.logo {
+  background: black;
+  display: block;
+  padding: 20px;
+  font-size: 50px;
+  color: #6BBAA7;
+  text-shadow: 2px 2px 2px #CCD6DD;
+  font-family: 'Libre Baskerville', serif;
+  text-align: center;
+  animation-name: animation;
+  animation-duration: 5s;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.navbar {
+  font-family: 'Roboto', sans-serif;
+}
+
+.bg {
+  background-image: url('background-index.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%
+}
+
+.navbar {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0px;
+  margin: 0;
+}
+
+.nav a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 17px;
+  padding: 15px 20px;
+}
+
+.nav a:hover {
+  background-color: #fefbd8;
+  color: #618685;
+}
+
+.nav .active {
+  color: #B6A19E;
+}
+.nav .menu {
+  float: left;
+}
+.nav .user {
+  float: right;
+}
+
+.info {
+  font-family: 'Roboto', sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  margin-top: 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.get-started a {
+  font-family:
+  color: black;
+  padding: 10px;
+  background: rgba(255,0,0,0.5);
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.3), 0 13px 40px 0 rgba(0,0,0,0.25);
+}
+
+.get-started a:hover {
+  color: rgba(255,0,0,0.5);
+  background: white;
+  border-style: solid;
+  border-color: rgba(255,0,0,0.5);
+  border-width: 1px;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Surreal</title>
+    <style>
+        body {
+            color: rgb(70, 70, 70);
+            background-color: lightgray;
+            font-family: roboto, sans-serif;
+        }
+    
+        h1,
+        h2 {
+            text-align: center;
+        }
+    
+        li {
+            font-size: 18px;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Surreal</h1>
+    <h2>Ryan Poon and Shadman Rakib, Pd. 9</h2>
+    <hr>
+    <ul>
+        <li>
+            <h3><a href="http://moe.stuy.edu/~srakib20/www/surreal/">Project Link</a>
+                <h3>
+        </li>
+        <li>
+            <h3>Project Description</h3>
+            <p>Gathers data on toilet paper, such as brand, price and availability from various stores (CVS, BJ’s, and Walmart). The website offers searching capabilities, where the user can filter products by availability, price, brand, and store. There is also a login feature, which allows users create their own accounts and add items to their account’s cart.</p>
+        </li>
+        <li>
+            <h3>Instructions</h3>
+            <p>Upon opening the webpage, the user can either create a new account if they do not already have one, or they can sign in.
+            When creating a new account, valid passwords must contain at least 16 characters, at least one uppercase letter, at
+            least one lowercase letter, at least one digit, and at least one special character. Once logged in, the user is brought to the home page. Here, they can use the filters at the left of the page to search
+            for items that meet the criteria they desire. For price, all products with a price less than or equal to the selected price are displayed. The user can also search by keyword using the search bar on the top-right. The search is not case-sensitive. The user can also add products to their cart from the home page and remove them from the cart page.</p>
+        </li>
+        <li>
+            <h3>How it works</h3>
+            <p>The product data is collected using BeautifulSoup4 and the lxml parser. The toilet paper page for each store is scraped
+            for their name, image, price, brand, and availability. After scraping the data for one product, said data is written to
+            a .csv file. At the home page, the products are displayed by reading this .csv file and displaying each property of
+            the product on a given row. In order to search, the contents of the .csv file are read and cleaned so they are in a list, with each element of the
+            list being all the properties of a given product. Each item of this list is checked to see if it meets the search
+            criteria. For the brand, store, and availability, the inputs from the user in the select form are compared against the
+            data in these categories for each product. If the lowercase versions of both the input and the product data match, the
+            product is considered to match the search criteria. For pricing, the actual price only has to be less than or equal to
+            the input price. If a product matches all the criteria provided by the user, a list containing all of the product’s data is
+            appended to a results list. When the user hits the search button, these results are printed. Speaking of printing, products are displayed onto the screen using templates with placeholders for each category. .format() is then used for each data category allowing the actual data to be inserted. This way, different products with different data can easily be displayed. For the login and accounts, when a user registers there is a new account added to a dictionary of accounts. When a
+            person logins, the password they submitted is compared to the salted hashed password stored in the user dictionary. If
+            the passwords match, then a new session object is created that is added to the sessions dictionary. This object has a
+            variable that contain the session id as well as login information. The SID is then used for any actions that relate to
+            the user’s account. The cart requires the SID in order to verify the user, and then is either adds, removes, or just
+            displays the cart.</p>
+        </li>
+        <li>
+            <h3>Files</h3>
+            <ul>
+                <li>home.py: the main page, displays all products and filtered products</li>
+                <li>scraperV2.py: python program that scrapes toilet paper data and writes the data to data.csv</li>
+                <li>data.csv: csv file for the product data</li>
+                <li>index.html: starting page, leads user to registration and login page</li>
+                <li>loginv3.py: python program that logs user in.</li>
+                <li>registerv3.py: registers new accounts</li>
+                <li>signout.py: removes a session</li>
+                <li>cart.py: shows carts and executes all modifications of carts</li>
+                <li>surrealAC.css: styling for registration and login pages</li>
+                <li>surrealIndex.css: styling for index.html</li>
+                <li>surrealMain.css: styling for home.py and cart.py</li>
+                <li>surrealUser.css: styling for loginv3.py and registerv3.py</li>
+            </ul>
+        </li>
+        <li>
+            <h3>Resources</h3>
+            <ul>
+                <li>CVS: <a href="https://www.cvs.com/shop/household-grocery/paper-plastic-products/bath-tissue">https://www.cvs.com/shop/household-grocery/paper-plastic-products/bath-tissue</a></li>
+                <li>BJ's: <a href="https://www.bjs.com/search/toilet%20paper/q?pagesize=80">https://www.bjs.com/search/toilet%20paper/q?pagesize=80</a></li>
+                <li>Walmart: <a href="https://www.walmart.com/browse/household-essentials/toilet-paper/1115193_1073264_1149384?cat_id=1115193_1073264_1149384&facet=facet_product_type%3AToilet+Paper&stores=-1">https://www.walmart.com/browse/household-essentials/toilet-paper/1115193_1073264_1149384?cat_id=1115193_1073264_1149384&facet=facet_product_type%3AToilet+Paper&stores=-1</a></li>
+                <li>BeautifulSoup Documentation: <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">https://www.crummy.com/software/BeautifulSoup/bs4/doc/</a></li>
+                <li>BeautifulSoup Tutorial: <a href="https://www.youtube.com/watch?v=aIPqt-OdmS0">https://www.youtube.com/watch?v=aIPqt-OdmS0</a></li>
+                <li>Requests Documentation: <a href="https://requests.readthedocs.io/en/master/">https://requests.readthedocs.io/en/master/</a></li>
+                <li>W3Schools HTML: <a href="https://www.w3schools.com/css/">https://www.w3schools.com/css/</a></li>
+                <li>W3Schools CSS: <a href="https://www.w3schools.com/html/">https://www.w3schools.com/html/</a></li>
+                <li>Hashlib: <a href="https://docs.python.org/3/library/hashlib.html">https://docs.python.org/3/library/hashlib.html</a></li>
+                <li>Pickle: <a href="https://docs.python.org/3/library/pickle.html">https://docs.python.org/3/library/pickle.html</a></li>
+                <li>Secrets: <a href="https://docs.python.org/3/library/secrets.html">https://docs.python.org/3/library/secrets.html</a></li>
+                <li>Cgi: <a href="https://docs.python.org/3/library/cgi.html">https://docs.python.org/3/library/cgi.html</a></li>
+                <li>String Formatting: <a href="https://www.w3schools.com/python/ref_string_format.asp">https://www.w3schools.com/python/ref_string_format.asp</a></li>
+                <li>Form-based Authentification Guide: <a href="https://stackoverflow.com/questions/549/the-definitive-guide-to-form-based-website-authentication">https://stackoverflow.com/questions/549/the-definitive-guide-to-form-based-website-authentication</a></li>
+            </ul>
+        </li>
+        <li>
+            <h3>Bugs, Errors and Things to be Aware of</h3>
+            <ul>
+                <li>
+                    It may take a few seconds for the project to load because the scraper has to make three BeautifulSoup objects (one for
+                    each store) and search each of them before the data can be displayed.
+                </li>
+                <li>Very, very rarely, there will be a pop-up on the CVS site that prevents the scraper from collecting data from CVS. The issue can be fixed by going to home.py again, or by waiting a couple minutes then going to home.py again.</li>
+                <li>When at the contact or about page, clicking home will bring you to the login page, not the home page.</li>
+            </ul>
+        </li>
+    </ul>
+    <br>
+    <br>
+    <br>
+
+</body>
+
+</html>

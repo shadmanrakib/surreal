@@ -1,0 +1,145 @@
+html, body {
+  margin: 0;
+  height: 100%
+}
+
+.bg {
+  background-image: url('background-index.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%
+}
+.container {
+  margin: 0;
+  background: rgba(255,255,255,0.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 420px;
+  height: 420px;
+  color: white;
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.3), 0 13px 40px 0 rgba(0,0,0,0.25);
+}
+form {
+  margin: 0px 60px;
+}
+input[type=text], input[type=password] {
+  background-color: rgba(255,255,255,0.4);
+  width: 100%;
+  margin: 10px 0px;
+  padding: 10px 10px;
+  display: inline-block;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  box-sizing: border-box;
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.3), 0 13px 40px 0 rgba(0,0,0,0.25);
+}
+
+@keyframes login-animation {
+  from {color: #6BBAA7;}
+  to {color: #1DA1F2;}
+}
+
+input[type=submit] {
+  width: 100%;
+  margin: 25px 0px 17px 0px;
+  padding: 10px 10px;
+  display: inline-block;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: lightgray;
+  font-family: 'Roboto', sans-serif;
+}
+input[type=submit]:hover {
+  background-color: #1DA1F2;
+  color: whitesmoke;
+  border: none;
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.3), 0 13px 40px 0 rgba(0,0,0,0.25);
+}
+.logo {
+  background: black;
+  display: block;
+  padding: 20px;
+  font-size: 25px;
+  color: #6BBAA7;
+  text-shadow: 2px 2px 2px #CCD6DD;
+  font-family: 'Libre Baskerville', serif;
+  text-align: center;
+  animation-name: login-animation;
+  animation-duration: 5s;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.form-title {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 25px;
+  font-family: 'Roboto', sans-serif;
+  padding-bottom: 5px;
+  font-weight: bold;
+  border-bottom-style: solid;
+  border-width: thin;
+}
+label {
+  font-size: 17px;
+  color: whitesmoke;
+  font-family: 'Roboto', sans-serif;
+}
+.alternate-form {
+  text-align: center;
+  font-size: 12px;
+}
+a {
+  text-decoration: none;
+}
+.tooltip {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 300px;
+  font-size: 12px;
+  font-family: 'Roboto', sans-serif;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 10px 15px 10px 10px;
+  position: absolute;
+  z-index: 1;
+  top: -110px;
+  left: 105%;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  right: 100%;
+  margin-top: -20px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent black black transparent;
+}
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+.message {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 0, 0, 0.2);
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.3), 0 13px 40px 0 rgba(0,0,0,0.25);
+  color: white;
+  padding: 10px;
+}
+ul, li {
+  margin: 0;
+  list-style-type: none;
+}
