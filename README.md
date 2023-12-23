@@ -1,5 +1,5 @@
 # surreal
-Find the cheapest toilet paper online. Built during the pandemic.
+Find the cheapest toilet paper online. Toilet paper scraper built during the pandemic.
 
 LAMP Stack app. Uses python CGI. Download the surreal folder. Meant to run using Apache.
 
